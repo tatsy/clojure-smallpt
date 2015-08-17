@@ -8,6 +8,12 @@ A Clojure implementation of 'smallpt' (small path tracing) that is originally co
 $ lein run [width] [height] [samples]
 ```
 
+## Result
+
+![result](./result.png)
+
+**(800 x 600 pixels, 128 samples per pixel)**
+
 ## License
 
 Copyright (c) 2015 tatsy, Tatsuya Yatagawa

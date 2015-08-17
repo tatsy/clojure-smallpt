@@ -185,9 +185,9 @@
 (defn smallpt [w h spp]
   (println "--- smallpt ---")
   (println " usage: lein run [width] [height] [samples]")
-  (println (String/format "  width: %d\n" w))
-  (println (String/format " height: %d\n" h))
-  (println (String/format "    spp: %d\n" spp))
+  (println (format "  width: %d" w))
+  (println (format " height: %d" h))
+  (println (format "    spp: %d" spp))
   (let [cam    (ray-init (vec-init 50.0 52.0 295.6) (vec-norm (vec-init 0.0 -0.042612 -1.0)))
         pixels (for [x (range w) y (range (dec h) -1 -1)
                      :let [pixel (reduce vec-add (for [i (range spp)] (vec-mul (trace-path scene cam x y w h spp) (/ 1.0 spp))))]]
@@ -196,7 +196,7 @@
 
 (defn -main [& args]
   (let [argc (if (nil? args) 0 (count args))
-        w    (if (> argc 1) (Integer/parseInt (nth args 1)) 400)
-        h    (if (> argc 2) (Integer/parseInt (nth args 2)) 300)
-        spp  (if (> argc 3) (Integer/parseInt (nth args 3)) 8)]
+        w    (if (> argc 1) (Integer/parseInt (nth args 0)) 400)
+        h    (if (> argc 2) (Integer/parseInt (nth args 1)) 300)
+        spp  (if (> argc 3) (Integer/parseInt (nth args 2)) 8)]
         (time (smallpt w h spp))))
