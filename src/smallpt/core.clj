@@ -196,7 +196,7 @@
 
 (defn -main [& args]
   (let [argc (if (nil? args) 0 (count args))
-        w    (if (> argc 1) (Integer/parseInt (nth args 0)) 400)
-        h    (if (> argc 2) (Integer/parseInt (nth args 1)) 300)
-        spp  (if (> argc 3) (Integer/parseInt (nth args 2)) 8)]
+        w    (if (>= argc 1) (Integer/parseInt (nth args 0)) 400)
+        h    (if (>= argc 2) (Integer/parseInt (nth args 1)) 300)
+        spp  (if (>= argc 3) (Integer/parseInt (nth args 2)) 8)]
         (time (smallpt w h spp))))
