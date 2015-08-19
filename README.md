@@ -12,9 +12,7 @@ $ lein run [width] [height] [samples]
 
 ![result](./result.png)
 
-**(800 x 600 pixels, 512 samples per pixel)**
-
-**Computation toook 38000 secs with 1.8 GHz CPU**
+(800 x 600 pixels, 512 samples per pixel, computation took 38000 secs with 1.8 GHz CPU)
 
 ## License
 
